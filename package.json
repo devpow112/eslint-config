@@ -14,8 +14,8 @@
   },
   "exports": {
     "./node-config": "./src/node-config.js",
-    "./test-config": "./src/test-config.js",
     "./node-config.js": "./src/node-config.js",
+    "./test-config": "./src/test-config.js",
     "./test-config.js": "./src/test-config.js"
   },
   "repository": {
@@ -37,6 +37,11 @@
   "engines": {
     "node": ">=12.22.7",
     "npm": ">=6.14.15"
+  },
+  "peerDependencies": {
+    "eslint": "^8.7.0",
+    "eslint-plugin-chai-friendly": "^0.7.2",
+    "eslint-plugin-mocha": "^10.0.3"
   },
   "devDependencies": {
     "@commitlint/cli": "^16.1.0",
