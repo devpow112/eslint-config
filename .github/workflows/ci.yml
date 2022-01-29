@@ -1,0 +1,29 @@
+name: CI
+on:
+  pull_request:
+    branches: main
+  push:
+    branches: main
+permissions:
+  contents: read
+jobs:
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2.4.0
+        with:
+          fetch-depth: 0
+      - name: Set up node
+        uses: actions/setup-node@v2.5.1
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - name: Install packages
+        run: npm ci
+      - name: Run lint (Markdown)
+        run: npm run lint:md
+      - name: Run lint (Git)
+        run: npm run lint:git

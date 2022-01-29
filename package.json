@@ -1,0 +1,50 @@
+{
+  "name": "@devpow112/eslint-config",
+  "version": "1.0.0",
+  "description": "Sharable eslint configuration",
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "lint": "run-s -s lint:git lint:js",
+    "lint:md": "markdownlint .",
+    "lint:git": "commitlint --from origin/main --to HEAD",
+    "format": "npm run -s format:md",
+    "format:md": "npm run -s lint:md -- --fix"
+  },
+  "exports": {
+    "./node-config": "./src/node-config.js",
+    "./test-config": "./src/test-config.js",
+    "./node-config.js": "./src/node-config.js",
+    "./test-config.js": "./src/test-config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/devpow112/eslint-config.git"
+  },
+  "keywords": [
+    "eslint-config"
+  ],
+  "author": "Devon Powell <devon.f.powell@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/devpow112/eslint-config/issues"
+  },
+  "homepage": "https://github.com/devpow112/eslint-config#readme",
+  "files": [
+    "src/**/*.js"
+  ],
+  "engines": {
+    "node": ">=12.22.7",
+    "npm": ">=6.14.15"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^16.1.0",
+    "@commitlint/config-conventional": "^16.0.0",
+    "@semantic-release/git": "^10.0.1",
+    "conventional-changelog-conventionalcommits": "^4.6.3",
+    "markdownlint-cli": "^0.30.0",
+    "npm-run-all": "^4.1.5",
+    "semantic-release": "^19.0.2"
+  }
+}
