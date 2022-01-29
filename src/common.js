@@ -21,6 +21,7 @@ module.exports = {
     "no-unused-expressions": "off",
     "no-useless-constructor": "error",
     "no-var": "error",
+    "padded-blocks": ["error", "never"],
     "prefer-arrow-callback": "error",
     "prefer-const": "error",
     "prefer-spread": "error",
