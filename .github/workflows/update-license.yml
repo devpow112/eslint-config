@@ -1,0 +1,83 @@
+name: Update License
+on:
+  push:
+    branches: main
+    paths: .github/workflows/update-license.yml
+  schedule:
+    - cron: '0 0 1 1 *'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency: update-license
+jobs:
+  update-license:
+    name: Update License
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    env:
+      BRANCH: auto/update-license
+      REGEX: ^(Copyright \(c\) )[0-9]{4}( Devon Powell)$
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2.4.0
+      - name: Determine year
+        id: year
+        run: echo "::set-output name=value::$(date +%Y)"
+      - name: Switch to '${{env.BRANCH}}'
+        run: |
+          git fetch origin +refs/heads/$BRANCH:refs/heads/$BRANCH || true
+          git checkout $BRANCH || git checkout -b $BRANCH
+      - name: Update LICENSE
+        run: sed -i -E "s/$REGEX/\1${{steps.year.outputs.value}}\2/" LICENSE
+      - name: Check for changes
+        id: changes
+        run: |
+          git diff --exit-code LICENSE || echo '::set-output name=exist::true'
+      - name: Push commit
+        if: steps.changes.outputs.exist
+        run: |
+          git reset --hard origin/main
+          sed -i -E "s/$REGEX/\1$YEAR\2/" LICENSE
+          git config user.name ${{secrets.AUTOMATION_USER}}
+          git config user.email ${{secrets.AUTOMATION_EMAIL}}
+          git add LICENSE
+          git commit -m "chore(license): update year to $YEAR"
+          git push --force origin $BRANCH
+        env:
+          YEAR: ${{steps.year.outputs.value}}
+      - name: Create pull request
+        if: steps.changes.outputs.exist
+        uses: actions/github-script@v5.1.0
+        with:
+          script: |
+            const year = '${{steps.year.outputs.value}}';
+            const title = `chore(license): update year to ${year}`;
+            const [owner, repo] = '${{github.repository}}'.split('/');
+            const base = 'refs/heads/main';
+            const head = 'refs/heads/${{env.BRANCH}}';
+            const labels = ['auto'];
+            const pullRequests = await github.rest.pulls.list({
+              head: `${owner}:${head}`,
+              owner, repo, base
+            });
+            if (pullRequests.data.length === 0) {
+              const createResult = await github.rest.pulls.create({
+                title, owner, repo, head, base
+              });
+              github.rest.issues.addLabels({
+                issue_number: createResult.data.number,
+                owner, repo, labels
+              });
+              console.log('Created new pull request');
+              return createResult.data.number;
+            } else {
+              const prNumber = pullRequests.data[0].number;
+              github.rest.issues.update({
+                issue_number: prNumber,
+                title, owner, repo, labels
+              });
+              console.log(`Pull request already exists, updated #${prNumber}`);
+              return prNumber;
+            }
+          result-encoding: string
+          github-token: ${{secrets.AUTOMATION_TOKEN}}
