@@ -1,6 +1,6 @@
 {
   "name": "@devpow112/eslint-config",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Sharable eslint configuration",
   "publishConfig": {
     "access": "public"
@@ -13,10 +13,14 @@
     "format:md": "npm run -s lint:md -- --fix"
   },
   "exports": {
-    "./node-config": "./src/node-config.js",
-    "./node-config.js": "./src/node-config.js",
-    "./test-config": "./src/test-config.js",
-    "./test-config.js": "./src/test-config.js"
+    "./node": "./src/node.js",
+    "./node.js": "./src/node.js",
+    "./node-config": "./src/node.js",
+    "./node-config.js": "./src/node.js",
+    "./test": "./src/test.js",
+    "./test.js": "./src/test.js",
+    "./test-config": "./src/test.js",
+    "./test-config.js": "./src/test.js"
   },
   "repository": {
     "type": "git",
