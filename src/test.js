@@ -1,5 +1,5 @@
 module.exports = {
-  extends: './node-config.js',
+  extends: './node.js',
   env: { mocha: true },
   plugins: ["mocha", "chai-friendly"],
   rules: {
