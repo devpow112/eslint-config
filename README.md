@@ -5,7 +5,7 @@
 [![CI][CI Badge]][CI Workflow]
 [![Release][Release Badge]][Release Workflow]
 [![Vulnerabilities][Vulnerabilities Badge]][Vulnerabilities Report]
-[![Node Version][Node Version Badge]](package.json#L38)
+[![Node Version][Node Version Badge]](package.json#L42)
 
 Sharable eslint configuration.
 
