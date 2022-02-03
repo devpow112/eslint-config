@@ -23,6 +23,8 @@ jobs:
           cache: npm
       - name: Install packages
         run: npm ci
+      - name: Run lint (JavaScript)
+        run: npm run lint:js
       - name: Run lint (Markdown)
         run: npm run lint:md
       - name: Run lint (Git)

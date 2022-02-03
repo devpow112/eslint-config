@@ -27,11 +27,14 @@ npm i
 Execute linters via `npm`.
 
 ```sh
-# git and markdown
+# git, javascript and markdown
 npm run lint
 
 # git only
 npm run lint:git
+
+# javascript only
+npm run lint:js
 
 # markdown only
 npm run lint:md
@@ -42,8 +45,11 @@ npm run lint:md
 Execute formatters via `npm`.
 
 ```sh
-# markdown only
+# javascript and markdown
 npm run format
+
+# javascript only
+npm run format:js
 
 # markdown only
 npm run format:md
