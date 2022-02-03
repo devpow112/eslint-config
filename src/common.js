@@ -1,5 +1,6 @@
 module.exports = {
-  extends: 'eslint:recommended',
+  extends: ['eslint:recommended', 'plugin:import/recommended'],
+  plugins: ['import'],
   rules: {
     'arrow-body-style': 'off',
     'array-bracket-spacing': ['error', 'never'],
@@ -36,6 +37,8 @@ module.exports = {
       'error', { anonymous: 'never', named: 'never', asyncArrow: 'always' }
     ],
     'spaced-comment': ['error', 'always'],
-    'no-multiple-empty-lines': ['error', { max: 1, maxEOF: 1, maxBOF: 0 }]
+    'no-multiple-empty-lines': ['error', { max: 1, maxEOF: 1, maxBOF: 0 }],
+    'import/extensions': ['error', 'always', { ignorePackages: true }],
+    'import/namespace': ['error', { allowComputed: true }]
   }
 };
