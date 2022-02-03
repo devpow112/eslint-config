@@ -7,7 +7,7 @@
 [![Vulnerabilities][Vulnerabilities Badge]][Vulnerabilities Report]
 [![Node Version][Node Version Badge]](package.json#L42)
 
-Sharable eslint configuration.
+Shareable eslint configuration.
 
 ## Development
 

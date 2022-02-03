@@ -1,7 +1,7 @@
 {
   "name": "@devpow112/eslint-config",
   "version": "1.0.5",
-  "description": "Sharable eslint configuration",
+  "description": "Shareable eslint configuration",
   "publishConfig": {
     "access": "public"
   },
