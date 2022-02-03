@@ -9,6 +9,23 @@
 
 Shareable eslint configuration.
 
+## Installation
+
+```sh
+npm i -D @devpow112/eslint-config
+```
+
+## Usage
+
+The shareable config can be configured in the [ESLint Configuration] file. There
+are currently 2 config types `node` and `test`.
+
+```json
+{
+  "extends": "@devpow112/eslint-config/node"
+}
+```
+
 ## Development
 
 Development can be done on any machine that can install **Node.js**. Only the
@@ -66,3 +83,4 @@ npm run format:md
 [Release Workflow]: https://github.com/devpow112/eslint-config/actions/workflows/release.yml?query=branch%3Amain
 [Vulnerabilities Badge]: https://img.shields.io/snyk/vulnerabilities/github/devpow112/eslint-config?label=Vulnerabilities
 [Vulnerabilities Report]: https://snyk.io/test/github/devpow112/eslint-config
+[ESLint Configuration]: https://eslint.org/docs/user-guide/configuring
