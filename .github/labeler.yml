@@ -1,8 +1,11 @@
 documentation:
   - '*.md'
+  - LICENSE
 github-actions:
   - .github/workflows/*.yml
 javascript:
   - '*.js'
+  - .npmrc
+  - .nvmrc
   - package.json
   - package-lock.json
