@@ -51,7 +51,7 @@
     "eslint-plugin-mocha": "^10"
   },
   "devDependencies": {
-    "@commitlint/cli": "^17.4.2",
+    "@commitlint/cli": "^17.4.3",
     "@devpow112/commitlint-config": "^1.0.4",
     "@devpow112/semantic-release-config": "^1.2.3",
     "eslint": "^8.34.0",
