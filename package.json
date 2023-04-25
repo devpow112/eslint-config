@@ -2,47 +2,47 @@
   "name": "@devpow112/eslint-config",
   "version": "1.1.5",
   "description": "Shareable eslint configuration",
-  "publishConfig": {
-    "access": "public"
-  },
-  "scripts": {
-    "lint": "run-s -s lint:git lint:js lint:md",
-    "lint:js": "eslint .",
-    "lint:md": "markdownlint .",
-    "lint:git": "commitlint --from origin/main --to HEAD",
-    "format": "run-s -s format:js format:md",
-    "format:js": "npm run -s lint:js -- --fix",
-    "format:md": "npm run -s lint:md -- --fix"
-  },
-  "exports": {
-    "./node": "./src/node.js",
-    "./node.js": "./src/node.js",
-    "./node-config": "./src/node.js",
-    "./node-config.js": "./src/node.js",
-    "./test": "./src/test.js",
-    "./test.js": "./src/test.js",
-    "./test-config": "./src/test.js",
-    "./test-config.js": "./src/test.js"
+  "keywords": [
+    "eslint-config"
+  ],
+  "homepage": "https://github.com/devpow112/eslint-config#readme",
+  "bugs": {
+    "url": "https://github.com/devpow112/eslint-config/issues"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/devpow112/eslint-config.git"
   },
-  "keywords": [
-    "eslint-config"
-  ],
-  "author": "Devon Powell <devon.f.powell@gmail.com>",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/devpow112/eslint-config/issues"
+  "author": "Devon Powell <devon.f.powell@gmail.com>",
+  "exports": {
+    "./node.js": "./src/node.js",
+    "./test.js": "./src/test.js"
   },
-  "homepage": "https://github.com/devpow112/eslint-config#readme",
   "files": [
     "src/**/*.js"
   ],
-  "engines": {
-    "node": ">=12.22.7",
-    "npm": ">=6.14.15"
+  "scripts": {
+    "lint": "run-s -s lint:git lint:js lint:md lint:pkg",
+    "lint:js": "eslint .",
+    "lint:md": "markdownlint .",
+    "lint:git": "commitlint --from origin/main --to HEAD",
+    "lint:pkg": "sort-package-json --check",
+    "format": "run-s -s format:js format:md format:pkg",
+    "format:js": "npm run -s lint:js -- --fix",
+    "format:md": "npm run -s lint:md -- --fix",
+    "format:pkg": "sort-package-json"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.6.1",
+    "@devpow112/commitlint-config": "^2.0.0",
+    "@devpow112/semantic-release-config": "^2.1.2",
+    "eslint": "^8.39.0",
+    "eslint-plugin-import": "^2.27.5",
+    "markdownlint-cli": "^0.33.0",
+    "npm-run-all": "^4.1.5",
+    "semantic-release": "^21.0.1",
+    "sort-package-json": "^2.4.1"
   },
   "peerDependencies": {
     "eslint": "^8",
@@ -50,14 +50,11 @@
     "eslint-plugin-import": "^2",
     "eslint-plugin-mocha": "^10"
   },
-  "devDependencies": {
-    "@commitlint/cli": "^17.6.1",
-    "@devpow112/commitlint-config": "^1.0.4",
-    "@devpow112/semantic-release-config": "^1.2.3",
-    "eslint": "^8.39.0",
-    "eslint-plugin-import": "^2.27.5",
-    "markdownlint-cli": "^0.33.0",
-    "npm-run-all": "^4.1.5",
-    "semantic-release": "^19.0.5"
+  "engines": {
+    "node": ">=18"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
   }
 }
