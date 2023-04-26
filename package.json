@@ -17,7 +17,9 @@
   "author": "Devon Powell <devon.f.powell@gmail.com>",
   "exports": {
     "./node.js": "./src/node.js",
-    "./test.js": "./src/test.js"
+    "./node": "./src/node.js",
+    "./test.js": "./src/test.js",
+    "./test": "./src/test.js"
   },
   "files": [
     "src/**/*.js"
