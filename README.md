@@ -3,7 +3,6 @@
 [![License][License Badge]](LICENSE)
 [![Version][Version Badge]][Version Package]
 [![Release][Release Badge]][Release Workflow]
-[![Vulnerabilities][Vulnerabilities Badge]][Vulnerabilities Report]
 [![Node Version][Node Version Badge]](package.json#L56)
 
 Shareable eslint configuration.
@@ -84,6 +83,4 @@ npm run format:pkg
 [Node Version Badge]: https://img.shields.io/node/v/@devpow112/eslint-config
 [Release Badge]: https://github.com/devpow112/eslint-config/actions/workflows/release.yml/badge.svg?branch=main
 [Release Workflow]: https://github.com/devpow112/eslint-config/actions/workflows/release.yml?query=branch%3Amain
-[Vulnerabilities Badge]: https://img.shields.io/snyk/vulnerabilities/github/devpow112/eslint-config?label=Vulnerabilities
-[Vulnerabilities Report]: https://snyk.io/test/github/devpow112/eslint-config
 [ESLint Configuration]: https://eslint.org/docs/user-guide/configuring
