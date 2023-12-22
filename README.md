@@ -58,22 +58,22 @@ npm run lint:md
 npm run lint:pkg
 ```
 
-### Formatting
+### Fixing
 
-Execute formatters via `npm`.
+Execute automatic fixers via `npm`.
 
 ```console
 # javascript, markdown and package.json
-npm run format
+npm run fix
 
 # javascript only
-npm run format:js
+npm run fix:js
 
 # markdown only
-npm run format:md
+npm run fix:md
 
 # package.json only
-npm run format:pkg
+npm run fix:pkg
 ```
 
 <!-- links -->

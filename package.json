@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/devpow112/eslint-config.git"
+    "url": "git+https://github.com/devpow112/eslint-config.git"
   },
   "license": "MIT",
   "author": "Devon Powell <devon.f.powell@gmail.com>",
@@ -26,24 +26,24 @@
   ],
   "scripts": {
     "lint": "run-s -s lint:git lint:js lint:md lint:pkg",
-    "lint:js": "eslint .",
-    "lint:md": "markdownlint .",
+    "lint:js": "eslint . --ignore-path .gitignore",
+    "lint:md": "markdownlint . --ignore-path .gitignore",
     "lint:git": "commitlint --from origin/main --to HEAD",
     "lint:pkg": "sort-package-json --check",
-    "format": "run-s -s format:js format:md format:pkg",
-    "format:js": "npm run -s lint:js -- --fix",
-    "format:md": "npm run -s lint:md -- --fix",
-    "format:pkg": "sort-package-json"
+    "fix": "run-s -s fix:js fix:md fix:pkg",
+    "fix:js": "npm run -s lint:js -- --fix",
+    "fix:md": "npm run -s lint:md -- --fix",
+    "fix:pkg": "npm pkg fix && sort-package-json"
   },
   "devDependencies": {
-    "@commitlint/cli": "^17.8.1",
-    "@devpow112/commitlint-config": "^2.0.0",
-    "@devpow112/semantic-release-config": "^2.2.0",
+    "@commitlint/cli": "^18.4.3",
+    "@devpow112/commitlint-config": "^2.0.1",
+    "@devpow112/semantic-release-config": "^2.2.2",
     "eslint": "^8.56.0",
     "eslint-plugin-import": "^2.29.1",
     "markdownlint-cli": "^0.38.0",
     "npm-run-all": "^4.1.5",
-    "semantic-release": "^21.1.2",
+    "semantic-release": "^22.0.12",
     "sort-package-json": "^2.6.0"
   },
   "peerDependencies": {
@@ -53,7 +53,7 @@
     "eslint-plugin-mocha": "^10"
   },
   "engines": {
-    "node": ">=18"
+    "node": ">=20"
   },
   "publishConfig": {
     "access": "public",
