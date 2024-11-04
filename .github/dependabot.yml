@@ -29,3 +29,20 @@ updates:
     commit-message:
       prefix: chore
       include: scope
+    groups:
+      eslint:
+        dependency-type: development
+        patterns:
+          - eslint
+          - eslint-*
+          - '@eslint/*'
+      commitlint:
+        dependency-type: development
+        patterns:
+          - '@commitlint/*'
+          - '@devpow112/commitlint-*'
+      semantic-release:
+        dependency-type: development
+        patterns:
+          - semantic-release
+          - '@devpow112/semantic-release-*'
