@@ -17,7 +17,6 @@ module.exports = {
     'no-shadow': ['error', { builtinGlobals: true, hoist: 'all' }],
     'no-confusing-arrow': 'error',
     'no-duplicate-imports': 'error',
-    'no-restricted-syntax': ['error', 'CatchClause[param=null]'],
     'no-underscore-dangle': 'off',
     'no-unused-expressions': 'off',
     'no-useless-constructor': 'error',
