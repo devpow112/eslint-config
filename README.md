@@ -18,10 +18,18 @@ npm i -D @devpow112/eslint-config
 The shareable config can be configured in the [ESLint Configuration] file. There
 are currently 2 config types `node` and `test`.
 
-```json
-{
-  "extends": "@devpow112/eslint-config/node"
-}
+```js
+const { FlatCompat } = require('@eslint/eslintrc');
+const js = require('@eslint/js');
+const path = require('node:path');
+
+const compat = new FlatCompat({
+  baseDirectory: __dirname,
+  recommendedConfig: js.configs.recommended,
+  allConfig: js.configs.all
+});
+
+module.exports = [...compat.extends('@devpow112/eslint-config')];
 ```
 
 ## Development
