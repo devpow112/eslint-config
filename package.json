@@ -25,15 +25,15 @@
     "src/**/*.js"
   ],
   "scripts": {
-    "lint": "run-s -s lint:git lint:js lint:md lint:pkg",
-    "lint:js": "eslint",
-    "lint:md": "markdownlint . --ignore-path .gitignore",
-    "lint:git": "commitlint --from origin/main --to HEAD",
-    "lint:pkg": "sort-package-json --check",
     "fix": "run-s -s fix:js fix:md fix:pkg",
     "fix:js": "npm run -s lint:js -- --fix",
     "fix:md": "npm run -s lint:md -- --fix",
-    "fix:pkg": "npm pkg fix && sort-package-json"
+    "fix:pkg": "npm pkg fix && sort-package-json",
+    "lint": "run-s -s lint:git lint:js lint:md lint:pkg",
+    "lint:git": "commitlint --from origin/main --to HEAD",
+    "lint:js": "eslint",
+    "lint:md": "markdownlint . --ignore-path .gitignore",
+    "lint:pkg": "sort-package-json --check"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.8.0",
