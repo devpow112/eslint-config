@@ -16,20 +16,41 @@ npm i -D @devpow112/eslint-config
 ## Usage
 
 The shareable config can be configured in the [ESLint Configuration] file. There
-are currently 2 config types `node` and `test`.
+are currently 2 config types `nodeConfigs` and `testConfigs`. They will work for
+both `commonjs` and `module` based set-ups.
+
+### `commonjs`
 
 ```js
-const { FlatCompat } = require('@eslint/eslintrc');
-const js = require('@eslint/js');
-const path = require('node:path');
+const { nodeConfigs, testConfigs } = require('@devpow112/eslint-config');
+const { defineConfig } = require('eslint/config');
+const { includeIgnoreFile } = require('@eslint/compat');
+const { resolve } = require('node:path');
 
-const compat = new FlatCompat({
-  baseDirectory: __dirname,
-  recommendedConfig: js.configs.recommended,
-  allConfig: js.configs.all
-});
+const gitignorePath = resolve(__dirname, '.gitignore');
 
-module.exports = [...compat.extends('@devpow112/eslint-config')];
+module.exports = defineConfig([
+  includeIgnoreFile(gitignorePath),
+  ...nodeConfigs,
+  ...testConfigs
+]);
+```
+
+### `modules`
+
+```js
+import { nodeConfigs, testConfigs } from './src/index.js';
+import { defineConfig } from 'eslint/config';
+import { fileURLToPath } from 'node:url';
+import { includeIgnoreFile } from '@eslint/compat';
+
+const gitignorePath = fileURLToPath(new URL('.gitignore', import.meta.url));
+
+export default defineConfig([
+  includeIgnoreFile(gitignorePath),
+  ...nodeConfigs,
+  ...testConfigs
+]);
 ```
 
 ## Development
