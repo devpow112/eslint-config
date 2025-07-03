@@ -1,16 +1,11 @@
-const { FlatCompat } = require('@eslint/eslintrc');
-const { includeIgnoreFile } = require('@eslint/compat');
-const js = require('@eslint/js');
-const path = require('node:path');
+import { defineConfig } from 'eslint/config';
+import { fileURLToPath } from 'node:url';
+import { includeIgnoreFile } from '@eslint/compat';
+import { nodeConfigs } from './src/index.js';
 
-const gitignorePath = path.resolve(__dirname, '.gitignore');
-const compat = new FlatCompat({
-  baseDirectory: __dirname,
-  recommendedConfig: js.configs.recommended,
-  allConfig: js.configs.all
-});
+const gitignorePath = fileURLToPath(new URL('.gitignore', import.meta.url));
 
-module.exports = [
+export default defineConfig([
   includeIgnoreFile(gitignorePath),
-  ...compat.extends('./src/node.js')
-];
+  ...nodeConfigs
+]);
