@@ -16,9 +16,7 @@
   "license": "MIT",
   "author": "Devon Powell <devon.f.powell@gmail.com>",
   "type": "module",
-  "exports": {
-    ".": "./src/index.js"
-  },
+  "main": "src/index.js",
   "files": [
     "src/**/*.js"
   ],
