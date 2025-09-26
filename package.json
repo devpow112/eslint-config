@@ -32,7 +32,7 @@
     "lint:pkg": "sort-package-json --check"
   },
   "devDependencies": {
-    "@commitlint/cli": "^19",
+    "@commitlint/cli": "^20",
     "@devpow112/commitlint-config": "^2",
     "@devpow112/semantic-release-config": "^3",
     "@eslint/compat": "^1",
