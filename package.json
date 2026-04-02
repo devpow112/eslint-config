@@ -1,6 +1,6 @@
 {
   "name": "@devpow112/eslint-config",
-  "version": "4.1.7",
+  "version": "4.1.8",
   "description": "Shareable eslint configuration",
   "keywords": [
     "eslint-config"
