@@ -30,7 +30,6 @@ updates:
       prefix: chore
       include: scope
     groups:
-      eslint:
       commitlint:
         dependency-type: development
         patterns:
