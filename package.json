@@ -42,7 +42,7 @@
     "semantic-release": "^25",
     "sort-package-json": "^3"
   },
-  "peerDependencies": {
+  "dependencies": {
     "@eslint/js": "^9",
     "@stylistic/eslint-plugin": "^5",
     "eslint": "^9",
