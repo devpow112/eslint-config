@@ -32,9 +32,9 @@
     "lint:pkg": "sort-package-json --check"
   },
   "dependencies": {
-    "@eslint/js": "^9",
+    "@eslint/js": "^10",
     "@stylistic/eslint-plugin": "^5",
-    "eslint": "^9",
+    "eslint": "^10",
     "eslint-plugin-chai-friendly": "^1",
     "eslint-plugin-import": "^2",
     "eslint-plugin-mocha": "^11",
