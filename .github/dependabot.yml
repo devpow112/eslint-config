@@ -36,6 +36,7 @@ updates:
           - eslint
           - eslint-*
           - '@eslint/*'
+          - '@stylistic/eslint-*'
       commitlint:
         dependency-type: development
         patterns:
