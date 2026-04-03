@@ -31,7 +31,7 @@ updates:
       include: scope
     groups:
       eslint:
-        dependency-type: development
+        dependency-type: production
         patterns:
           - eslint
           - eslint-*
