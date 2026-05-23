@@ -41,7 +41,7 @@
     "globals": "^17"
   },
   "devDependencies": {
-    "@commitlint/cli": "^20",
+    "@commitlint/cli": "^21",
     "@devpow112/commitlint-config": "^2",
     "@devpow112/semantic-release-config": "^4",
     "@eslint/compat": "^2",
