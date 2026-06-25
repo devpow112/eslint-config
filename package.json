@@ -1,6 +1,6 @@
 {
   "name": "@devpow112/eslint-config",
-  "version": "4.1.14",
+  "version": "4.1.15",
   "description": "Shareable eslint configuration",
   "keywords": [
     "eslint-config"
@@ -49,7 +49,7 @@
     "npm-run-all": "^4",
     "rimraf": "^6",
     "semantic-release": "^25",
-    "sort-package-json": "^3"
+    "sort-package-json": "^4"
   },
   "engines": {
     "node": ">=20"
