@@ -45,7 +45,7 @@
     "@devpow112/commitlint-config": "^2",
     "@devpow112/semantic-release-config": "^4",
     "@eslint/compat": "^2",
-    "markdownlint-cli": "^0.48",
+    "markdownlint-cli": "^0.49",
     "npm-run-all": "^4",
     "rimraf": "^6",
     "semantic-release": "^25",
